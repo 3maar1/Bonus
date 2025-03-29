@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button with Image Overlay</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f4f4f4;
+            font-family: "Times New Roman", sans-serif;
+        }
+
+        .button-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .ramadan-button {
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        .ramadan-button:hover {
+            background: linear-gradient(135deg, #e67e22, #d35400);
+            transform: scale(1.05);
+        }
+
+        .moon-icon {
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: inset -4px -4px 0px rgba(0, 0, 0, 0.2);
+        }
+
+        .img-calendar {
+            position: absolute;
+            top: -250px; /* Adjust position above the button */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px; /* Adjust size as needed */
+            z-index: 2; /* Ensure it stays above the button */
+        }
+    </style>
+</head>
+<body style="background-image: url('bg-image.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+
+    <div class="button-container">
+        <img src="img-calendar.png" class="img-calendar">
+        <a href="eid_page.html" class="ramadan-button">
+            <div class="moon-icon"></div>
+            Click to finish the day
+        </a>

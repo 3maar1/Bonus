@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eid Mubarak</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0"></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+            overflow: hidden;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            margin-top: -50px;
+        }
+        h1 {
+            
+            font-size: 100px;
+            color: #ffee00;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            font-family:'ELephant', sans-serif;
+        }
+        h2 {
+            font-size: 24px;
+            color: #ffffff;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Eid Mubarak</h1>
+        <h2>كل عام وأنتم إلى الله أقرب، وعلى الطاعة أدوم، ومن الجنة أقرب، عيد فطر سعيد ومبارك</h2>
+    </div>
+    <script>
+        function launchConfetti() {
+            var duration = 2000; // 5 seconds
+            var end = Date.now() + duration;
+            
+            (function frame() {
+                if (Date.now() > end) return;
+                confetti({
+                    particleCount: 10, // Fewer particles
+                    startVelocity: 20, // Slower start
+                    spread: 300,
+                    gravity: 1, // Makes confetti reach the bottom
+                    scalar: 2, // Makes confetti bigger
+                    ticks: 300,
+                    origin: { x: Math.random(), y: 0 }, // Falls from the top
+                    colors: ['#ff0', '#0f0', '#00f', '#f00', '#ff8000', '#8000ff']
+                });
+                requestAnimationFrame(frame);
+            })();
+        }
+
+        launchConfetti(); // Runs for 5 seconds when the page loads
+    </script>
+    <body style="background-image: url('bg-img.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;"></body>
+</body>
+</html>
